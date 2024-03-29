@@ -23,6 +23,7 @@ vector_db = Milvus.from_documents(
     connection_args={"host": "0.0.0.0", "port": "19530"},
 )
 
+print(vector_db._collection.count())
 query = "What is this document about?"
 
 docs = vector_db.similarity_search(query)
